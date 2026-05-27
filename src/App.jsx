@@ -8,6 +8,8 @@ import {
 
 import Login from "./components/Login"
 import Home from "./pages/Home"
+import NuevoTicket from "./pages/NuevoTicket"
+import Tickets from "./pages/Tickets"
 
 function App() {
 
@@ -20,6 +22,10 @@ function App() {
         <Route path="/" element={<Login />} />
 
         <Route path="/home" element={<Home />} />
+
+        <Route path="/nuevo-ticket" element={<NuevoTicket />} />
+
+        <Route path="/tickets" element={<Tickets />} />
 
       </Routes>
 
