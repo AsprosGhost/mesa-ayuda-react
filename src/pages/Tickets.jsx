@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react"
 import Navbar from "../components/Navbar"
+import { useNavigate } from "react-router-dom"
 
 function Tickets() {
   const [tickets, setTickets] = useState([])
 
-  function eliminarTicket(indexEliminar) {
+function editarTicket(idEditar) {
+  navigate(`/editar-ticket/${idEditar}`)
+}
+
+function eliminarTicket(indexEliminar) {
     const nuevosTickets = tickets.filter(
       (_, index) => index !== indexEliminar
     )
@@ -75,6 +80,8 @@ function Tickets() {
                 onClick={() => editarTicket(ticket.id)}
                 >
                  Editar
+            </button>
+
             </button>
 
             </div>

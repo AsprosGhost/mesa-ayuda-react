@@ -10,6 +10,7 @@ import Login from "./components/Login"
 import Home from "./pages/Home"
 import NuevoTicket from "./pages/NuevoTicket"
 import Tickets from "./pages/Tickets"
+import EditarTicket from "./pages/EditarTicket"
 
 function App() {
 
@@ -26,7 +27,9 @@ function App() {
         <Route path="/nuevo-ticket" element={<NuevoTicket />} />
 
         <Route path="/tickets" element={<Tickets />} />
-
+        
+        <Route path="/editar-ticket/:id" element={<EditarTicket />} />
+        
       </Routes>
 
     </BrowserRouter>
