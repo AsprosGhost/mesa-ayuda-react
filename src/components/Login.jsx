@@ -8,6 +8,8 @@ function Login() {
 
   function manejarLogin() {
 
+    console.log("click detectado")
+
     if (usuario === "" || password === "") {
       setMensaje("Llena todos los campos 😅")
 
