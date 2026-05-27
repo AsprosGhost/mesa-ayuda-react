@@ -1,10 +1,12 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom" 
 
 function Login() {
 
   const [usuario, setUsuario] = useState("")
   const [password, setPassword] = useState("")
   const [mensaje, setMensaje] = useState("")
+  const navigate = useNavigate()
 
   function manejarLogin() {
 
@@ -15,6 +17,7 @@ function Login() {
 
     } else if (usuario === "admin" && password === "1234") {
       setMensaje("Bienvenido jefe 😎")
+      navigate("/Home")
 
     } else {
       setMensaje("Usuario o contraseña incorrectos")
