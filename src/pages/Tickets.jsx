@@ -5,18 +5,21 @@ function Tickets() {
   const [tickets, setTickets] = useState([])
 
   function eliminarTicket(indexEliminar) {
+    const nuevosTickets = tickets.filter(
+      (_, index) => index !== indexEliminar
+    )
 
-  const nuevosTickets = tickets.filter(
-    (_, index) => index !== indexEliminar
-  )
+    setTickets(nuevosTickets)
 
-  setTickets(nuevosTickets)
+    localStorage.setItem(
+      "tickets",
+      JSON.stringify(nuevosTickets)
+    )
+  }
 
-  localStorage.setItem(
-    "tickets",
-    JSON.stringify(nuevosTickets)
-  )
-}
+  function editarTicket(idEditar) {
+    alert("Vamos a editar el ticket con ID: " + idEditar)
+  }
 
   useEffect(() => {
     const ticketsGuardados =
@@ -64,7 +67,15 @@ function Tickets() {
                 onClick={() => eliminarTicket(index)}
               >
                 Eliminar
+                
               </button>
+
+            <button
+                className="btn btn-warning mt-2 ms-2"
+                onClick={() => editarTicket(ticket.id)}
+                >
+                 Editar
+            </button>
 
             </div>
 
