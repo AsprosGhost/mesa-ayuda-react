@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom" 
+import Boton from "./Boton"
 
 function Login() {
 
@@ -52,12 +53,9 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button
-          className="btn btn-primary w-100"
-          onClick={manejarLogin}
-        >
-          Iniciar Sesión
-        </button>
+      <div onClick={manejarLogin}>
+  <Boton texto="Iniciar Sesión" />
+</div>
 
         <p className="mt-3 text-center">
           {mensaje}
