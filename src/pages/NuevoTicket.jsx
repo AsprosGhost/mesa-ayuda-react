@@ -13,10 +13,11 @@ function NuevoTicket() {
   const nuevoTicket = {
 
     id: Date.now(),
-    
+
     titulo,
     descripcion,
     prioridad,
+    estado: "Abierto",
     fecha: new Date().toLocaleString()
   }
 
