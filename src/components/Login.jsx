@@ -17,7 +17,7 @@ function Login() {
       setMensaje("Llena todos los campos 😅")
 
     } else if (usuario === "admin" && password === "1234") {
-      setMensaje("Bienvenido jefe 😎")
+      localStorage.setItem("logueado","true")
       navigate("/Home")
 
     } else {
